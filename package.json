@@ -44,7 +44,8 @@
     "passport-url": "^1.0.4",
     "request-promise": "^4.2.2",
     "session-file-store": "^1.2.0",
-    "uuid": "^3.0.1"
+    "uuid": "^3.0.1",
+    "snyk": "^1.316.1"
   },
   "scripts": {
     "lint": "eslint *.js config db test",
@@ -55,7 +56,9 @@
     "dev": "nodemon server.js",
     "watch": "npm-run-all --parallel watch:*",
     "watch:css": "nodemon -e less -w public/css -x npm run build:css",
-    "build:css": "lessc public/css/main.less > public/css/main.css"
+    "build:css": "lessc public/css/main.less > public/css/main.css",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "engines": {
     "node": ">=6.7.0",
@@ -79,5 +82,6 @@
     "oauth2",
     "security",
     "passport"
-  ]
+  ],
+  "snyk": true
 }
