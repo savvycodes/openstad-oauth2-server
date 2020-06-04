@@ -5,8 +5,11 @@ node_js:
 services:
   - docker
 
+before_install:
+  - docker build -t openstad/auth:dev -f Dockerfile.dev .
+
 script:
-  - npm run test
+  - docker run -e CI=true openstad/auth:dev npm run test -- --coverage
 
 deploy:
   provider: script
