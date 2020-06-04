@@ -50,7 +50,7 @@ app.use((req, res, next) => {
 const sessionConfig = {
   saveUninitialized : true,
   resave            : true,
-  secret            : config.session.secret,
+  secret            : process.env.SESSION_SECRET,
 //  store             : new MemoryStore(),
   store             : new FileStore({
     ttl:    config.session.maxAge      //3600 * 24 * 31

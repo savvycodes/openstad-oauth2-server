@@ -9,7 +9,7 @@ env:
   - SESSION_SECRET=test
 
 script:
-  - docker run -e CI=true openstad/auth:dev npm run test -- --coverage
+  - docker run -e CI=true openstad/auth:dev env SESSION_SECRET=test npm run test -- --coverage 
 
 deploy:
   provider: script
