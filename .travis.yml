@@ -1,6 +1,12 @@
 language: node_js
-node_js:
-  - 11
+
+services:
+  - docker
+
+script:
+  - npm run test
+  - docker build -t openstad/auth:test .
+
 deploy:
   provider: script
   script: bash docker_push
