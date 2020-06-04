@@ -42,7 +42,7 @@ RUN openssl genrsa -out privatekey.pem 2048 \
     && openssl req -new -key privatekey.pem -out certrequest.csr -subj "/C=US/ST=Denial/L=Springfield/O=Dis/CN=$APP_URL"     && openssl x509 -req -in certrequest.csr -signkey privatekey.pem -out certificate.pem
 
 # Move certificates
-RUN mkdir -p/home/app/certs     && mv certificate.pem/home/app/certs/     && mv certrequest.csr/home/app/certs/     && mv privatekey.pem/home/app/certs/
+RUN mkdir -p /home/app/certs   && mv certificate.pem/home/app/certs/     && mv certrequest.csr/home/app/certs/     && mv privatekey.pem/home/app/certs/
 
 # This packages must be installed seperatly to prevent crash
 # @since node 10.16
