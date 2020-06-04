@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - 11
+deploy:
+  provider: script
+  script: bash docker_push
+  on:
+    all_branches: true
+    condition: $TRAVIS_BRANCH =~ ^(staging|release|master)$
