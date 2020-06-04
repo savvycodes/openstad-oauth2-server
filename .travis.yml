@@ -5,11 +5,10 @@ services:
 
 script:
   - npm run test
-  - docker build -t openstad/auth:test .
 
 deploy:
   provider: script
   script: bash docker_push
   on:
     all_branches: true
-    condition: $TRAVIS_BRANCH =~ ^(staging|release|master)$
+    condition: $TRAVIS_BRANCH =~ ^(feature/travis-ci|staging|release|master)$
