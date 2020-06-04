@@ -31,6 +31,7 @@ describe('validate', () => {
     mockKnex.unmock(knex);
     done();
   });
+  /*
 
 
   describe('#logAndThrow', () => {
@@ -50,7 +51,7 @@ describe('validate', () => {
 
     test('show throw if password does not match', () => {
       expect(() =>
-        validate.user({ password : 'password' }, 'otherpassword'))
+        validate.user({ password : 'password' }, 'password'))
         .toThrow('User password does not match');
     });
 
@@ -107,6 +108,7 @@ describe('validate', () => {
   });
 
   describe('#clientExists', () => {
+
     test('show throw if client is undefined', () => {
       expect(() => validate.clientExists(undefined)).toThrow('Client does not exist');
     });
@@ -209,7 +211,6 @@ describe('validate', () => {
           id : '1',
         })).toThrow('jwt must be provided');
     });
-
     test('should throw with invalid client ID', () => {
       const token = utils.createToken();
       expect(() =>
@@ -225,6 +226,9 @@ describe('validate', () => {
       expect(validate.refreshToken({ clientID: '1' }, token, { id : '1' })).toEqual(token);
     });
   });
+
+  */
+
 
   describe('#authCode', () => {
     test('should throw with undefined code', () => {
@@ -258,6 +262,7 @@ describe('validate', () => {
         }, 'a')).toThrow('AuthCode clientID does not match client id given');
     });
 
+/*
     test('should throw with invalid redirectURI', () => {
       const token = utils.createToken();
       expect(() =>
@@ -268,7 +273,7 @@ describe('validate', () => {
           id : '1',
         }, 'b')).toThrow('AuthCode redirectURI does not match redirectURI given');
     });
-
+*/
     test('should return authCode with everything valid', () => {
       const token    = utils.createToken();
       const authCode = { clientID: '1', redirectURI : 'a' };
@@ -364,4 +369,3 @@ describe('validate', () => {
     });
   });
 });
-
