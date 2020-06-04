@@ -1,4 +1,4 @@
-FROM alpine:3.9
+FROM node:10.16.0-alpine
 
 # Set the working directory to the root of the container
 WORKDIR /srv/openstad/
