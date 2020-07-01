@@ -6,7 +6,7 @@
   "license": "MIT",
   "main": "app.js",
   "dependencies": {
-    "bcrypt": "^3.0.2",
+    "bcrypt": "^5.0.0",
     "bluebird": "^3.5.1",
     "body-parser": "^1.9.x",
     "bookshelf": "^0.13.3",
