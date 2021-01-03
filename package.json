@@ -9,7 +9,7 @@
     "bcrypt": "^3.0.2",
     "bluebird": "^3.5.1",
     "body-parser": "^1.9.x",
-    "bookshelf": "^0.13.3",
+    "bookshelf": "^0.15.2",
     "bookshelf-json-columns": "^2.1.1",
     "connect-ensure-login": "^0.1.x",
     "connect-mongo": "^3.2.0",
