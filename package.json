@@ -21,7 +21,7 @@
     "express-brute": "^1.0.1",
     "express-flash": "0.0.2",
     "express-session": "^1.16.2",
-    "express-validator": "^5.3.0",
+    "express-validator": "^6.5.0",
     "fast-csv": "^2.4.1",
     "hat": "0.0.3",
     "jsonwebtoken": "^8.4.0",
@@ -47,7 +47,7 @@
     "passport-oauth2-client-password": "^0.1.x",
     "passport-url": "^1.0.4",
     "request-promise": "^4.2.2",
-    "sanitize-html": "^1.27.2",
+    "sanitize-html": "^2.0.0",
     "session-file-store": "^1.2.0",
     "uuid": "^3.0.1"
   },
