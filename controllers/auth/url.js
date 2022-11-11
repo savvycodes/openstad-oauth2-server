@@ -76,6 +76,12 @@ exports.register = (req, res, next) => {
 
 const handleSending = async (req, res, next) => {
     try {
+        const ispriviligedRoute = req.params.priviligedRoute === 'admin';
+
+        if (ispriviligedRoute) {
+            req.user = await authService.validatePrivilegeUser(req.body.email,  req.client.id);
+        }
+
         await verificationService.sendVerification(req.user, req.client, req.redirectUrl);
 
         req.flash('success', {msg: 'De e-mail is verstuurd naar: ' + req.user.email});
@@ -100,7 +106,7 @@ const updateUser = async (user, email) => {
 }
 
 const getUser = async (email) => {
-    return new User({email}).fetch();
+  return new User({email}).fetch();
 }
 
 exports.postLogin = async (req, res, next) => {
